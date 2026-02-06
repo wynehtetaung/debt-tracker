@@ -21,7 +21,7 @@ const ItemList = () => {
             className="w-10 h-10 cursor-pointer"
             onClick={() => navigate("/")}
           />
-          <p className="text-2xl uppercase font-bold">Item Lists</p>
+          <p className="text-2xl uppercase font-bold">ပစ္စည်းစာရင်းများ</p>
           <Toaster />
         </div>
 

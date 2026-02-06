@@ -25,9 +25,9 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
           </button>
 
           {/* content  */}
-          <h2 className="text-2xl font-bold mb-4">Add New Item Entry</h2>
+          <h2 className="text-2xl font-bold mb-4">ပစ္စည်း စာရင်းပြင်ဆင်ရန်</h2>
           <p className="font-light">
-            Record a new debt or credit to keep your finances.
+            ပစ္စည်းအမည်၊ တစ်ခုလျှင်ဈေးနှုန်းနှင့် အရေအတွက်ကို ပြင်ဆင်ပါ။
           </p>
 
           <div className="border-b w-full my-5"></div>
@@ -39,7 +39,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
             }}
           >
             <div className="w-full">
-              <p className="font-semibold text-xl mb-1">Name</p>
+              <p className="font-semibold text-xl mb-1">အမည်</p>
               <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                 <Users className="text-gray-500" />
                 <input
@@ -47,7 +47,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                   className="w-full outline-none text-black text-lg"
                   type="text"
                   name="name"
-                  placeholder="Enter Your Name"
+                  placeholder="ပြင်မည့်နာမည်ထည့်ပါ"
                   value={name}
                 />
               </div>
@@ -55,7 +55,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
 
             <div className="mt-5 flex justify-evenly">
               <div className="max-w-1/2">
-                <p className="text-xl font-semibold mb-1">Price</p>
+                <p className="text-xl font-semibold mb-1">စျေးနှုန်း</p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <Receipt className="text-gray-500" />
                   <input
@@ -70,7 +70,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                 </div>
               </div>
               <div className="max-w-1/2">
-                <p className="text-xl font-semibold mb-1">Quantity</p>
+                <p className="text-xl font-semibold mb-1">အရေအတွက်</p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <Receipt className="text-gray-500" />
                   <input
@@ -92,7 +92,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                   onClick={() => setEditItem(!editItem)}
                   className="px-5 py-3 max-w-1/2 cursor-pointer rounded-sm hover:bg-red-500 hover:text-white"
                 >
-                  Cancel
+                  ပယ်ဖျက်ရန်
                 </button>
                 <button
                   onClick={() => {
@@ -113,7 +113,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                   }}
                   className="px-5 py-3 cursor-pointer max-w-1/2 bg-blue-500 rounded-sm text-gray-200"
                 >
-                  Update
+                  ပြင်ဆင်ရန်
                 </button>
               </div>
             </div>

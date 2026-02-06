@@ -17,9 +17,9 @@ const EditUser = () => {
           </button>
 
           {/* content  */}
-          <h2 className="text-2xl font-bold mb-4">Add New Debt Entry</h2>
+          <h2 className="text-2xl font-bold mb-4">စျေးနှုန်း ထည့်ရန်</h2>
           <p className="font-light">
-            Record a new debt or credit to keep your finances.
+            စျေးဝယ်သူ၏ စျေးနှုန်းကို ပြင်ဆင်ရန် ဤနေရာတွင် ထည့်သွင်းပါ။
           </p>
 
           <div className="border-b w-full my-5"></div>
@@ -31,7 +31,7 @@ const EditUser = () => {
             }}
           >
             <div className="mt-5">
-              <p className="text-xl font-semibold mb-1">Paid Amount</p>
+              <p className="text-xl font-semibold mb-1">ပေးသောပမာဏ</p>
               <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                 <Receipt className="text-gray-500" />
                 <input
@@ -50,7 +50,7 @@ const EditUser = () => {
                   onClick={() => setEditDebt(!editDebt)}
                   className="px-5 py-3 max-w-1/2 cursor-pointer rounded-sm hover:bg-red-500 hover:text-white"
                 >
-                  Cancel
+                  ပယ်ဖျက်ရန်
                 </button>
                 <button
                   onClick={() => {
@@ -60,7 +60,7 @@ const EditUser = () => {
                   }}
                   className="px-5 py-3 cursor-pointer max-w-1/2 bg-blue-500 rounded-sm text-gray-200"
                 >
-                  Add
+                  ထည့်ရန်
                 </button>
               </div>
             </div>
