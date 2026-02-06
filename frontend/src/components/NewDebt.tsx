@@ -48,11 +48,11 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
 
           {/* content  */}
           <h2 className="text-2xl font-bold mb-4">ဝယ်သူအသစ်ထည့်ရန်</h2>
-          <p className="font-light">
+          <p className="font-light mt-10">
             ဝယ်သူအသစ်ထည့်ရန်အတွက် အောက်ပါအချက်အလက်များကို ဖြည့်စွက်ပေးပါ။
           </p>
 
-          <div className="border-b w-full my-5"></div>
+          <div className="border-b w-full my-8"></div>
 
           <form
             className="w-full"
@@ -61,7 +61,9 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
             }}
           >
             <div className="w-full">
-              <p className="font-semibold text-xl mb-1">နာမည်</p>
+              <p className="font-semibold max-md:text-md md:text-xl mb-2">
+                နာမည်
+              </p>
               <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                 <Users className="text-gray-500" />
                 <input
@@ -75,9 +77,11 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                 />
               </div>
             </div>
-            <div className="flex justify-evenly gap-4 my-3">
-              <div className="w-full">
-                <p className="text-xl font-semibold mb-1">ပစ္စည်း</p>
+            <div className="flex justify-evenly gap-4 mb-3 mt-4">
+              <div className="md:w-full max-md:w-6/12">
+                <p className="max-md:text-md md:text-xl font-semibold mb-2">
+                  ပစ္စည်း
+                </p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <ShoppingBasket className="text-gray-500" />
                   <select
@@ -103,8 +107,10 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                   </select>
                 </div>
               </div>
-              <div className="">
-                <p className="text-xl font-semibold mb-1">အရေအတွက်</p>
+              <div className="max-md:w-3/12 md:w-full">
+                <p className="max-md:text-md md:text-xl font-semibold mb-2">
+                  အရေအတွက်
+                </p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <FileDigit className="text-gray-500" />
                   <input
@@ -125,8 +131,10 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                   />
                 </div>
               </div>
-              <div className="">
-                <p className="text-xl font-semibold mb-1">စျေးနှုန်း</p>
+              <div className="max-md:w-3/12 md:w-full">
+                <p className="max-md:text-md md:text-xl font-semibold mb-2">
+                  စျေးနှုန်း
+                </p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <DollarSign className="text-gray-500" />
                   <div className="w-full">{price}</div>
@@ -175,7 +183,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
               </button>
             </div>
             <div>
-              <p className="text-xl font-semibold mb-1">
+              <p className="text-xl font-semibold mb-2 mt-5">
                 ရွေးချယ်ထားသော ပစ္စည်းများ
               </p>
               <div className="flex flex-wrap gap-2 border border-black/20 px-2 py-3 rounded-lg">
@@ -215,7 +223,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
               </div>
             </div>
             <div className="mt-5">
-              <p className="text-xl font-semibold mb-1">
+              <p className="text-xl font-semibold mb-2">
                 ပေးထားသော ပိုက်ဆံပမာဏ
               </p>
               <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
@@ -231,7 +239,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
               </div>
             </div>
             <div className="w-full relative h-18 mt-5">
-              <div className="w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
+              <div className="max-md:w-10/12 md:w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
                 <button
                   onClick={() => setNewDebt(!newDebt)}
                   className="px-5 py-3 max-w-1/2 cursor-pointer rounded-sm hover:bg-red-500 hover:text-white"

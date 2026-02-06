@@ -26,11 +26,11 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
 
           {/* content  */}
           <h2 className="text-2xl font-bold mb-4">ပစ္စည်း စာရင်းပြင်ဆင်ရန်</h2>
-          <p className="font-light">
+          <p className="font-light mt-10">
             ပစ္စည်းအမည်၊ တစ်ခုလျှင်ဈေးနှုန်းနှင့် အရေအတွက်ကို ပြင်ဆင်ပါ။
           </p>
 
-          <div className="border-b w-full my-5"></div>
+          <div className="border-b w-full my-8"></div>
 
           <form
             className="w-full"
@@ -39,7 +39,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
             }}
           >
             <div className="w-full">
-              <p className="font-semibold text-xl mb-1">အမည်</p>
+              <p className="font-semibold text-xl mb-2">အမည်</p>
               <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                 <Users className="text-gray-500" />
                 <input
@@ -53,9 +53,9 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
               </div>
             </div>
 
-            <div className="mt-5 flex justify-evenly">
+            <div className="mt-5 flex justify-between gap-3">
               <div className="max-w-1/2">
-                <p className="text-xl font-semibold mb-1">စျေးနှုန်း</p>
+                <p className="text-xl font-semibold mb-2">စျေးနှုန်း</p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <Receipt className="text-gray-500" />
                   <input
@@ -70,7 +70,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                 </div>
               </div>
               <div className="max-w-1/2">
-                <p className="text-xl font-semibold mb-1">အရေအတွက်</p>
+                <p className="text-xl font-semibold mb-2">အရေအတွက်</p>
                 <div className="flex gap-2 border border-black/20 px-2 py-3 rounded-lg">
                   <Receipt className="text-gray-500" />
                   <input
@@ -87,7 +87,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
               </div>
             </div>
             <div className="w-full relative h-18 mt-5">
-              <div className="w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
+              <div className="max-md:w-10/12 md:w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
                 <button
                   onClick={() => setEditItem(!editItem)}
                   className="px-5 py-3 max-w-1/2 cursor-pointer rounded-sm hover:bg-red-500 hover:text-white"

@@ -30,7 +30,7 @@ const ItemList = () => {
           className="bg-blue-600 rounded-lg flex gap-2 justify-center items-center p-3 select-none cursor-pointer"
         >
           <Plus className="bg-white text-blue-600 rounded-full w-5 h-5" />
-          <span className="text-white">Add New Item</span>
+          <span className="text-white max-md:text-[11px]">အသစ်ထည့်ရန်</span>
         </div>
         <NewItem newItem={newItem} setNewItem={setNewItem} />
       </div>

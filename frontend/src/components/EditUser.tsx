@@ -18,7 +18,7 @@ const EditUser = () => {
 
           {/* content  */}
           <h2 className="text-2xl font-bold mb-4">စျေးနှုန်း ထည့်ရန်</h2>
-          <p className="font-light">
+          <p className="font-light my-10">
             စျေးဝယ်သူ၏ စျေးနှုန်းကို ပြင်ဆင်ရန် ဤနေရာတွင် ထည့်သွင်းပါ။
           </p>
 
@@ -45,7 +45,7 @@ const EditUser = () => {
               </div>
             </div>
             <div className="w-full relative h-18 mt-5">
-              <div className="w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
+              <div className="max-md:w-10/12 md:w-5/12 absolute right-0 bottom-0 flex justify-evenly gap-4">
                 <button
                   onClick={() => setEditDebt(!editDebt)}
                   className="px-5 py-3 max-w-1/2 cursor-pointer rounded-sm hover:bg-red-500 hover:text-white"
