@@ -23,6 +23,7 @@ export const addItem = async (req, res) => {
       name,
       price,
       qty,
+      stock: qty,
     }).save();
     res.json({
       success: true,
@@ -43,7 +44,7 @@ export const updateItem = async (req, res) => {
     const { name, price, qty } = req.body;
     const item = await Item.findByIdAndUpdate(
       id,
-      { name, price, qty },
+      { name, price, qty, stock: qty },
       { new: true },
     );
     res.json({
