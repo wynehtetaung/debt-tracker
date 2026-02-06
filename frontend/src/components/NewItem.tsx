@@ -39,6 +39,7 @@ const NewItem = ({ newItem, setNewItem }: newItemProps) => {
               setName("");
               setPrice("");
               setQty("");
+              setNewItem(false);
             }}
           >
             <div className="w-full">

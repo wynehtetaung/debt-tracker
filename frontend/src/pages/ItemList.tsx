@@ -38,26 +38,36 @@ const ItemList = () => {
         <table className="w-full">
           <thead>
             <tr className="bg-black/20">
-              <th className="py-5">Name</th>
-              <th className="py-5">Price</th>
-              <th className="py-5">Quantity</th>
-              <th className="py-5">Action</th>
+              <th className="max-md:text-sm py-5">အမည်</th>
+              <th className="border-l border-black/40"></th>
+              <th className="max-md:text-sm py-5">စျေးနှုန်း</th>
+              <th className="border-l border-black/40"></th>
+              <th className="max-md:text-sm py-5">အရေအတွက်</th>
+              <th className="border-l border-black/40"></th>
+              <th className="max-md:text-sm py-5">ကျန်ရှိ</th>
+              <th className="border-l border-black/40"></th>
+              <th className="max-md:text-sm py-5">လုပ်ဆောင်ချက်</th>
             </tr>
             <tr className="border-b border-gray-600"></tr>
           </thead>
           <tbody className="">
             {items.map((item) => (
               <tr key={item._id} className="border-b border-gray-400">
-                <th className="py-5 text-lg capitalize">{item.name}</th>
+                <th className="py-5 text-lg">{item.name}</th>
+                <th className="border-l border-black/40"></th>
                 <th className="py-5 text-lg">{item.price.toLocaleString()}</th>
+                <th className="border-l border-black/40"></th>
                 <th className="py-5 text-lg">{item.qty.toLocaleString()}</th>
-                <th className="py-5 text-lg ">
+                <th className="border-l border-black/40"></th>
+                <th className="py-5 text-lg">{item.stock?.toLocaleString()}</th>
+                <th className="border-l border-black/40"></th>
+                <th className="py-5 max-md:text-sm md:text-lg ">
                   <span
                     onClick={() => {
                       setEditItem(true);
                       setEditItemProp(item);
                     }}
-                    className="capitalize p-2 bg-blue-500 text-white px-4 rounded-lg mr-3 cursor-pointer"
+                    className="capitalize p-2 bg-blue-500 text-white px-4 rounded-lg md:mr-3 cursor-pointer"
                   >
                     Edit
                   </span>

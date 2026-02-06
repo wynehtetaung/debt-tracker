@@ -100,7 +100,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                       (item) =>
                         item.qty > 0 && (
                           <option key={item._id} value={item._id}>
-                            {item.name} {`[${item.qty}]`}
+                            {item.name} {`[${item.stock}]`}
                           </option>
                         ),
                     )}
@@ -147,8 +147,8 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                   const selectedItem = items.find(
                     (item) => item._id === selectedId,
                   );
-                  if (selectedItem && typeof selectedItem.qty === "number") {
-                    selectedItem.qty = selectedItem.qty - qty;
+                  if (selectedItem && typeof selectedItem.stock === "number") {
+                    selectedItem.stock = selectedItem.stock - qty;
                   }
                   const oldItems = items.filter(
                     (item) => item._id !== selectedId,
@@ -203,9 +203,9 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                         );
                         if (
                           selectedItem &&
-                          typeof selectedItem.qty === "number"
+                          typeof selectedItem.stock === "number"
                         ) {
-                          selectedItem.qty = selectedItem.qty + item.qty;
+                          selectedItem.stock = selectedItem.stock + item.qty;
                         }
                         const oldItems = items.filter(
                           (it) => it._id !== item._id,
@@ -249,7 +249,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                 <button
                   onClick={() => {
                     if (name.trim() === "" || getItem.length === 0) {
-                      toast.error("Name and items are required");
+                      toast.error("နာမည်နှင့် ပစ္စည်းအချက်အလက်များကို ဖြည့်ပါ");
                       return;
                     }
                     addUser(name, getItem, paid);

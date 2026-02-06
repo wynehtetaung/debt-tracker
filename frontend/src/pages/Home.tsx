@@ -183,7 +183,7 @@ const Home = () => {
       </div>
 
       {/* phone view  */}
-      <div className="">
+      <div className="md:hidden">
         {filterUsers.map((user: DebtUser) => (
           <div
             key={user._id}

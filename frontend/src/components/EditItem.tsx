@@ -45,6 +45,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                 <input
                   onChange={(e) => setName(e.target.value)}
                   className="w-full outline-none text-black text-lg"
+                  autoComplete="off"
                   type="text"
                   name="name"
                   placeholder="ပြင်မည့်နာမည်ထည့်ပါ"
@@ -63,6 +64,7 @@ const EditItem = ({ editItem, setEditItem, item }: EditItemProp) => {
                       setPrice(Number(e.target.value));
                     }}
                     className="w-full outline-none"
+                    autoComplete="off"
                     type="number"
                     name="item"
                     value={price}
