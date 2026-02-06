@@ -34,7 +34,7 @@ export const addUser = async (req, res) => {
         }
         await Item.findByIdAndUpdate(
           item._id,
-          { $set: { stock: newStock } },
+          { $inc: { stock: newStock } },
           { new: true },
         );
       }),

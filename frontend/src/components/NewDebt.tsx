@@ -119,9 +119,9 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                       const selectedItem = items.find(
                         (item) => item._id === selectedId,
                       );
-                      if (Number(e.target.value) > (selectedItem?.qty || 0)) {
+                      if (Number(e.target.value) > (selectedItem?.stock || 0)) {
                         toast.error("Quantity exceeds available stock");
-                        setQty(selectedItem?.qty || 0);
+                        setQty(selectedItem?.stock || 0);
                       }
                     }}
                     autoComplete="off"
