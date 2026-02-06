@@ -200,7 +200,12 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                         const oldItems = items.filter(
                           (it) => it._id !== item._id,
                         );
-                        setItems([...oldItems, selectedItem]);
+                        // setItems([...oldItems, selectedItem]);
+                        if (selectedItem) {
+                          setItems([...oldItems, selectedItem]);
+                        } else {
+                          setItems([...oldItems]);
+                        }
                       }}
                     />
                     {item.name}
