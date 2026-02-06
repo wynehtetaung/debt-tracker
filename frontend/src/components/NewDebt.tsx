@@ -7,7 +7,7 @@ import {
   FileDigit,
 } from "lucide-react";
 import { useItem } from "../context/ItemContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import type { ItemProp } from "../types/item";
 import toast from "react-hot-toast";
@@ -20,20 +20,12 @@ type NewDebtProps = {
 const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
   const { items, setItems } = useItem();
   const { addUser } = useUser();
-  const [price, setPrice] = useState<number | "" | undefined>("");
-  const [qty, setQty] = useState<number>(1);
+  const [price, setPrice] = useState<number | undefined>(0);
+  const [qty, setQty] = useState<number>(0);
   const [selectedId, setSelectedId] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [paid, setPaid] = useState<number | "">("");
   const [getItem, setGetItem] = useState<ItemProp[]>([]);
-
-  useEffect(() => {
-    if (items.length > 0 && selectedId === "") {
-      setSelectedId(items[0]._id);
-      setPrice(items[0].price);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items]);
 
   return (
     newDebt && (
@@ -94,11 +86,20 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
 
                       setPrice(price);
                       setSelectedId(e.target.value);
+                      setQty(1);
+                      if (e.target.value === "") {
+                        setPrice(0);
+                        setQty(0);
+                      }
                     }}
                   >
+                    <option className="max-md:text-sm" value="">
+                      ပစ္စည်းများ
+                    </option>
                     {items.map(
                       (item) =>
-                        item.qty > 0 && (
+                        item.stock &&
+                        item.stock > 0 && (
                           <option key={item._id} value={item._id}>
                             {item.name} {`[${item.stock}]`}
                           </option>
@@ -119,10 +120,11 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                       const selectedItem = items.find(
                         (item) => item._id === selectedId,
                       );
-                      if (Number(e.target.value) > (selectedItem?.stock || 0)) {
-                        toast.error("Quantity exceeds available stock");
-                        setQty(selectedItem?.stock || 0);
-                      }
+                      if (selectedItem?.stock !== undefined)
+                        if (Number(e.target.value) > selectedItem?.stock) {
+                          toast.error("Quantity exceeds available stock");
+                          setQty(selectedItem?.stock);
+                        }
                     }}
                     autoComplete="off"
                     type="number"
@@ -176,6 +178,7 @@ const NewDebt = ({ newDebt, setNewDebt }: NewDebtProps) => {
                     setGetItem([...getItem, updateSelectedItem]);
                   }
                   setQty(1);
+                  setPrice(0);
                 }}
                 className="bg-blue-500 w-full rounded-lg py-2 uppercase text-white font-semibold cursor-pointer"
               >

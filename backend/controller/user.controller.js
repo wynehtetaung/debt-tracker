@@ -25,16 +25,9 @@ export const addUser = async (req, res) => {
     const totalPaid = items.reduce((sum, item) => sum + item.price, 0);
     await Promise.all(
       items.map(async (item) => {
-        const selectedItem = await Item.findById(item._id);
-        const newStock = selectedItem.stock - item.qty;
-        if (newStock < 0) {
-          throw new Error(
-            `Not enough stock for item ${selectedItem.name}. Available: ${selectedItem.stock}, Requested: ${item.qty}`,
-          );
-        }
         await Item.findByIdAndUpdate(
           item._id,
-          { $inc: { stock: newStock } },
+          { $inc: { stock: -item.qty } },
           { new: true },
         );
       }),
