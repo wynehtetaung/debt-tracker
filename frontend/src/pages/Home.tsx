@@ -101,7 +101,10 @@ const Home = () => {
             {totalPaid.toLocaleString()} MMK
           </p>
           <p className="text-lg text-green-500 mt-2 font-semibold">
-            {Math.floor((totalPaid / totalDebt) * 100)}% paid
+            {!Math.floor((totalPaid / totalDebt) * 100)
+              ? 0
+              : Math.floor((totalPaid / totalDebt) * 100)}
+            % paid
           </p>
         </div>
       </div>
