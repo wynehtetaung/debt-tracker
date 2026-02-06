@@ -199,7 +199,7 @@ const Home = () => {
               <div className="">
                 {user.items.map((item) => (
                   <li key={item._id} className="my-1 list-decimal">
-                    {item.name}
+                    {item.name} {"- "} {item.qty} ခု
                   </li>
                 ))}
               </div>
